@@ -15,12 +15,12 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var photoTitle: UILabel!
     @IBOutlet weak var commentTableView: UITableView!
     
-    let apiService = ApiService()
+    let apiService: ApiService = ApiService()
     
-    var titleText = ""
-    var thumbnailUrl = ""
+    var titleText: String = ""
+    var thumbnailUrl: String = ""
     var id:Int?
-    var list = [Comment]()
+    var list: [Comment] = [Comment]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

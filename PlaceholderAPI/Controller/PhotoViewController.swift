@@ -11,10 +11,10 @@ class PhotoViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var list = [Photo]()
-    var choosenPhoto = Photo()
-    let apiService = ApiService()
-    var imageData = Data()
+    var list: [Photo] = [Photo]()
+    var choosenPhoto: Photo = Photo()
+    let apiService: ApiService = ApiService()
+    var imageData: Data = Data()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +65,10 @@ extension PhotoViewController: UITableViewDataSource{
     }
 }
 
+//LOAD IMAGE EXTENSION -> .loadUrl() - imageGet
+//tableview deque.
+// seguesiz navigationController
+//view model
 
 extension PhotoViewController: UITableViewDelegate {
 
