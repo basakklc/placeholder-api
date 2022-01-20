@@ -46,26 +46,13 @@ extension PhotoViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell") as! PhotoTableViewCell
         let imageUrl = list[indexPath.row].thumbnailUrl! + ".png"
-        let data = imageGet(url: imageUrl)
-        cell.photoImageView.image = UIImage(data: data)
+        cell.photoImageView.loadImage(url: imageUrl)
         cell.label.text = "\(list[indexPath.row].title!)"
         return cell
     }
-    
-    func imageGet(url: String) -> Data {
-        let url = URL(string: url)
-        do{
-            if let url = url {
-                imageData = try Data(contentsOf: url)
-            }
-        }catch{
-            print("err")
-        }
-        return imageData
-    }
 }
 
-//LOAD IMAGE EXTENSION -> .loadUrl() - imageGet
+
 //tableview deque.
 // seguesiz navigationController
 //view model

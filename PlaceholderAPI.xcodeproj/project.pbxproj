@@ -23,6 +23,7 @@
 		A18774262798030F00150F2A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18774242798030F00150F2A /* PhotoViewController.swift */; };
 		A1AD56722796E03400A23AF1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD56702796E03400A23AF1 /* Photo.swift */; };
 		A1AD56732796E03400A23AF1 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD56712796E03400A23AF1 /* Comment.swift */; };
+		A1C482B927999A8C0077FFAB /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C482B827999A8C0077FFAB /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A18774242798030F00150F2A /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		A1AD56702796E03400A23AF1 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		A1AD56712796E03400A23AF1 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		A1C482B827999A8C0077FFAB /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		A12EA9EB27957BFF007875EE /* PlaceholderAPI */ = {
 			isa = PBXGroup;
 			children = (
+				A1C482B7279999C80077FFAB /* Extensions */,
 				A1AD567A2796E29A00A23AF1 /* Core */,
 				A187741D2798020F00150F2A /* Network */,
 				A18774082797FEC000150F2A /* Model */,
@@ -202,6 +205,14 @@
 				A12EA9EE27957BFF007875EE /* SceneDelegate.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		A1C482B7279999C80077FFAB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A1C482B827999A8C0077FFAB /* UIImageView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +352,7 @@
 				A12EAA272795B23D007875EE /* CommentTableViewCell.swift in Sources */,
 				A18774212798020F00150F2A /* URLExtension.swift in Sources */,
 				A18774202798020F00150F2A /* ApiService.swift in Sources */,
+				A1C482B927999A8C0077FFAB /* UIImageView.swift in Sources */,
 				A18774252798030F00150F2A /* PhotoDetailViewController.swift in Sources */,
 				A1AD56732796E03400A23AF1 /* Comment.swift in Sources */,
 				A12EA9EF27957BFF007875EE /* SceneDelegate.swift in Sources */,

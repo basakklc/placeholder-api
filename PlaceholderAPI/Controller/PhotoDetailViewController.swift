@@ -32,27 +32,15 @@ class PhotoDetailViewController: UIViewController {
         commentTableView.delegate = self
         commentTableView.dataSource = self
         photoTitle.text = titleText
-        downloadImage(url: thumbnailUrl)
+        photoImageView.loadImage(url: thumbnailUrl)
     }
     
-    func fetchComments(){
+    func fetchComments() {
         apiService.getCommentsByPhoto(photoId: id) { (comments) in
             self.list = comments
             DispatchQueue.main.async {
                 self.commentTableView.reloadData()
             }
-        }
-    }
-    
-    func downloadImage(url:String){
-        let url = URL(string: thumbnailUrl)
-        do{
-            if let url = url {
-                let data = try Data(contentsOf: url)
-                photoImageView.image = UIImage(data: data)
-            }
-        }catch{
-            print("err")
         }
     }
 }
