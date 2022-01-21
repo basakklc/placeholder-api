@@ -31,6 +31,8 @@ class PhotoDetailViewController: UIViewController {
     func configureContents() {
         commentTableView.delegate = self
         commentTableView.dataSource = self
+        let nib = UINib(nibName: "CommentTableViewCell", bundle: nil)
+        commentTableView.register(nib, forCellReuseIdentifier: "commentCell")
         photoTitle.text = titleText
         photoImageView.loadImage(url: thumbnailUrl)
     }
@@ -51,13 +53,11 @@ extension PhotoDetailViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "commentTableViewCell") as! CommentTableViewCell
-        cell.commentBodyLabel.text = list[indexPath.row].body
-        cell.commetNameLabel.text = list[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell") as! CommentTableViewCell
+        cell.configureContents(nameText: list[indexPath.row].name, bodyText: list[indexPath.row].body)
         return cell
     }
 }
 
 extension PhotoDetailViewController: UITableViewDelegate {
-    
 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" id="KGk-i7-Jjw" customClass="CommentTableViewCell" customModule="PlaceholderAPI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="136"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="340" height="136"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faO-v3-Kpf">
+                        <rect key="frame" x="15" y="11" width="134.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment Body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJY-zf-1cL">
+                        <rect key="frame" x="15" y="62.5" width="123.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="body text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hF5-oG-rT5">
+                        <rect key="frame" x="15" y="85.5" width="310" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbW-Bu-qar">
+                        <rect key="frame" x="15" y="34" width="310" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LbW-Bu-qar" firstAttribute="leading" secondItem="faO-v3-Kpf" secondAttribute="leading" id="7ev-8Z-LBM"/>
+                    <constraint firstItem="faO-v3-Kpf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="89d-8V-Bu9"/>
+                    <constraint firstItem="CJY-zf-1cL" firstAttribute="leading" secondItem="faO-v3-Kpf" secondAttribute="leading" id="KHC-Bt-ITG"/>
+                    <constraint firstItem="hF5-oG-rT5" firstAttribute="top" secondItem="CJY-zf-1cL" secondAttribute="bottom" constant="2" id="V8g-44-vej"/>
+                    <constraint firstAttribute="trailing" secondItem="hF5-oG-rT5" secondAttribute="trailing" constant="15" id="XYr-zq-br8"/>
+                    <constraint firstItem="LbW-Bu-qar" firstAttribute="top" secondItem="faO-v3-Kpf" secondAttribute="bottom" constant="2" id="i0M-lj-CQj"/>
+                    <constraint firstAttribute="trailing" secondItem="LbW-Bu-qar" secondAttribute="trailing" constant="15" id="k4V-4Y-c6L"/>
+                    <constraint firstItem="CJY-zf-1cL" firstAttribute="top" secondItem="LbW-Bu-qar" secondAttribute="bottom" constant="8" id="kuh-4g-qqg"/>
+                    <constraint firstItem="hF5-oG-rT5" firstAttribute="leading" secondItem="faO-v3-Kpf" secondAttribute="leading" id="lsU-Wr-gHe"/>
+                    <constraint firstItem="faO-v3-Kpf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="yYb-Gx-bUx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="commentBodyLabel" destination="hF5-oG-rT5" id="lNJ-wI-ixH"/>
+                <outlet property="commentNameLabel" destination="LbW-Bu-qar" id="E1W-Bl-04d"/>
+            </connections>
+            <point key="canvasLocation" x="234.78260869565219" y="17.410714285714285"/>
+        </tableViewCell>
+    </objects>
+</document>

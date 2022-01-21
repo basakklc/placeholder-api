@@ -25,6 +25,8 @@ class PhotoViewController: UIViewController {
     func configureContents() {
         tableView.delegate = self
         tableView.dataSource = self
+        let nibName = UINib(nibName: "PhotoTableViewCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "photoCell")
     }
     
     func fetchPhotos() {
@@ -44,16 +46,13 @@ extension PhotoViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell") as! PhotoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell") as! PhotoTableViewCell
         let imageUrl = list[indexPath.row].thumbnailUrl! + ".png"
-        cell.photoImageView.loadImage(url: imageUrl)
-        cell.label.text = "\(list[indexPath.row].title!)"
+        cell.configureContents(imageUrl, titleText: list[indexPath.row].title!)
         return cell
     }
 }
 
-
-//tableview deque.
 // seguesiz navigationController
 //view model
 
