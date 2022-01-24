@@ -15,34 +15,37 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var photoTitle: UILabel!
     @IBOutlet weak var commentTableView: UITableView!
     
-    let apiService: ApiService = ApiService()
-    
     var titleText: String = ""
     var thumbnailUrl: String = ""
     var id:Int?
     var list: [Comment] = [Comment]()
+    var viewModel: PhotoDetailViewModel = PhotoDetailViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
-        fetchComments()
+        viewModel.fetchComment(photoId: id)
     }
     
     func configureContents() {
+        viewModel.viewModelDelegate = self
         commentTableView.delegate = self
         commentTableView.dataSource = self
         let nib = UINib(nibName: "CommentTableViewCell", bundle: nil)
         commentTableView.register(nib, forCellReuseIdentifier: "commentCell")
+        setupView()
+    }
+    
+    func setupView(){
         photoTitle.text = titleText
         photoImageView.loadImage(url: thumbnailUrl)
     }
-    
-    func fetchComments() {
-        apiService.getCommentsByPhoto(photoId: id) { (comments) in
-            self.list = comments
-            DispatchQueue.main.async {
-                self.commentTableView.reloadData()
-            }
+}
+extension PhotoDetailViewController: PhotoDetailViewModelDelegate {
+    func requestCompleted() {
+        list = viewModel.getList()
+        DispatchQueue.main.async {
+            self.commentTableView.reloadData()
         }
     }
 }

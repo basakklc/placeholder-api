@@ -11,13 +11,7 @@ class PhotoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var photoCellimageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    
-    static let identifier = "photoCell"
-
-   
-    static var nib: UINib {
-           return UINib(nibName: String(describing: self), bundle: nil)
-    }
+  
     
     override func awakeFromNib() {
         super.awakeFromNib()

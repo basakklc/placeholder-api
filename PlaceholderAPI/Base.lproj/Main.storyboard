@@ -11,7 +11,7 @@
         <!--PhotoList-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="PhotoList" id="BYZ-38-t0r" customClass="PhotoViewController" customModule="PlaceholderAPI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="photoList" title="PhotoList" id="BYZ-38-t0r" customClass="PhotoViewController" customModule="PlaceholderAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,56 +33,55 @@
                     <navigationItem key="navigationItem" id="HUW-U7-6e5"/>
                     <connections>
                         <outlet property="tableView" destination="Cwb-Ce-bSW" id="Min-cf-EgT"/>
-                        <segue destination="lOY-3L-tII" kind="show" identifier="photoDetailVC" id="ORf-eV-HcZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489.85507246376818" y="29.464285714285712"/>
+            <point key="canvasLocation" x="396" y="29"/>
         </scene>
         <!--PhotoDetail-->
         <scene sceneID="3hP-RZ-6QB">
             <objects>
-                <viewController title="PhotoDetail" id="lOY-3L-tII" customClass="PhotoDetailViewController" customModule="PlaceholderAPI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="photoDetail" title="PhotoDetail" id="lOY-3L-tII" customClass="PhotoDetailViewController" customModule="PlaceholderAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jsx-Up-d44">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pBQ-px-KoQ">
-                                <rect key="frame" x="73" y="102" width="268" height="282"/>
+                                <rect key="frame" x="73" y="58" width="268" height="282"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="268" id="3Va-kB-VoU"/>
                                     <constraint firstAttribute="height" constant="282" id="BGF-z1-bql"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qld-h2-aev">
-                                <rect key="frame" x="20" y="408" width="374" height="27.5"/>
+                                <rect key="frame" x="20" y="364" width="374" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1V8-ym-YaV">
-                                <rect key="frame" x="20" y="437" width="374" height="3"/>
+                                <rect key="frame" x="20" y="393" width="374" height="3"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="xcG-OJ-yHD"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Comment's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4n-ry-e1Y">
-                                <rect key="frame" x="20" y="504" width="374" height="27.5"/>
+                                <rect key="frame" x="20" y="460" width="374" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VA-DR-pNd">
-                                <rect key="frame" x="20" y="533" width="374" height="3"/>
+                                <rect key="frame" x="20" y="489" width="374" height="3"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="1bd-IW-z67"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBp-Dw-CCJ">
-                                <rect key="frame" x="20" y="448" width="374" height="48"/>
+                                <rect key="frame" x="20" y="404" width="374" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="zXD-Oq-uel"/>
                                 </constraints>
@@ -91,7 +90,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="edA-s1-nTy">
-                                <rect key="frame" x="20" y="544" width="374" height="318"/>
+                                <rect key="frame" x="20" y="500" width="374" height="362"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>

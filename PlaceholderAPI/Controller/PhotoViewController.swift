@@ -15,26 +15,30 @@ class PhotoViewController: UIViewController {
     var choosenPhoto: Photo = Photo()
     let apiService: ApiService = ApiService()
     var imageData: Data = Data()
+    var nibCellName: UINib = UINib()
+    var viewModel:PhotoListViewModel = PhotoListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
-        fetchPhotos()
+        viewModel.fetchPhotos()
     }
     
     func configureContents() {
+        viewModel.viewModelDelegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        let nibName = UINib(nibName: "PhotoTableViewCell", bundle: nil)
-        tableView.register(nibName, forCellReuseIdentifier: "photoCell")
+        nibCellName = UINib(nibName: "PhotoTableViewCell", bundle: nil)
+        tableView.register(nibCellName, forCellReuseIdentifier: "photoCell")
     }
+}
+
+extension PhotoViewController: PhotoListViewModelDelegate{
     
-    func fetchPhotos() {
-        apiService.getAllPhoto { photos in
-            self.list = photos
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+    func requestCompleted() {
+        list = viewModel.getList()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
 }
@@ -53,22 +57,21 @@ extension PhotoViewController: UITableViewDataSource{
     }
 }
 
-// seguesiz navigationController
-//view model
-
 extension PhotoViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       choosenPhoto = list[indexPath.row]
-       performSegue(withIdentifier: "photoDetailVC", sender: nil)
+        choosenPhoto = list[indexPath.row]
+        let destination: PhotoDetailViewController = dataTransferToDetailVC()
+        navigationController?.pushViewController(destination, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "photoDetailVC" {
-            let destination = segue.destination as! PhotoDetailViewController
-            destination.titleText = choosenPhoto.title!
-            destination.thumbnailUrl = choosenPhoto.thumbnailUrl! + ".png"
-            destination.id = choosenPhoto.id
-        }
+    func dataTransferToDetailVC() -> PhotoDetailViewController {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let destination: PhotoDetailViewController = storyBoard.instantiateViewController(withIdentifier: "photoDetail") as! PhotoDetailViewController
+        destination.titleText = choosenPhoto.title!
+        destination.thumbnailUrl = choosenPhoto.thumbnailUrl! + ".png"
+        destination.id = choosenPhoto.id
+        return destination
     }
+
 }

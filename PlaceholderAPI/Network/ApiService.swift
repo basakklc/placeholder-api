@@ -9,6 +9,8 @@ import Foundation
 
 class ApiService {
     
+    static var service = ApiService()
+    
     func getAllPhoto(completionHandler: @escaping ([Photo])->()){
         
         URLSession.shared.dataTask(with: URL.photos){ (data, response, error) in
