@@ -13,22 +13,21 @@ class PhotoViewController: UIViewController {
     
     var list: [Photo] = [Photo]()
     var choosenPhoto: Photo = Photo()
-    let apiService: ApiService = ApiService()
-    var imageData: Data = Data()
-    var nibCellName: UINib = UINib()
-    var viewModel:PhotoListViewModel = PhotoListViewModel()
+    var viewModel:PhotoListViewModel = PhotoListViewModel(service: DefaultService())
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         configureContents()
         viewModel.fetchPhotos()
     }
     
     func configureContents() {
+        
         viewModel.viewModelDelegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        nibCellName = UINib(nibName: "PhotoTableViewCell", bundle: nil)
+        let nibCellName: UINib = UINib(nibName: "PhotoTableViewCell", bundle: nil)
         tableView.register(nibCellName, forCellReuseIdentifier: "photoCell")
     }
 }

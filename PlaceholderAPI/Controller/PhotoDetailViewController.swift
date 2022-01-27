@@ -19,7 +19,8 @@ class PhotoDetailViewController: UIViewController {
     var thumbnailUrl: String = ""
     var id:Int?
     var list: [Comment] = [Comment]()
-    var viewModel: PhotoDetailViewModel = PhotoDetailViewModel()
+    
+    var viewModel: PhotoDetailViewModel = PhotoDetailViewModel(service: DefaultService())
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -50,8 +50,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pBQ-px-KoQ">
                                 <rect key="frame" x="73" y="58" width="268" height="282"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="268" id="3Va-kB-VoU"/>
-                                    <constraint firstAttribute="height" constant="282" id="BGF-z1-bql"/>
+                                    <constraint firstAttribute="width" secondItem="pBQ-px-KoQ" secondAttribute="height" multiplier="134:141" id="5RU-xX-6JI"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qld-h2-aev">
@@ -89,7 +88,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="edA-s1-nTy">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="edA-s1-nTy">
                                 <rect key="frame" x="20" y="500" width="374" height="362"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -105,6 +104,7 @@
                             <constraint firstItem="pBQ-px-KoQ" firstAttribute="leading" secondItem="a6B-bh-hT9" secondAttribute="leading" constant="73" id="FRq-et-f3q"/>
                             <constraint firstItem="1V8-ym-YaV" firstAttribute="leading" secondItem="a6B-bh-hT9" secondAttribute="leading" constant="20" id="Iju-c4-Ttl"/>
                             <constraint firstItem="dBp-Dw-CCJ" firstAttribute="top" secondItem="1V8-ym-YaV" secondAttribute="bottom" constant="8" id="KUD-zO-S4I"/>
+                            <constraint firstItem="a6B-bh-hT9" firstAttribute="trailing" secondItem="pBQ-px-KoQ" secondAttribute="trailing" constant="73" id="LXj-iM-QKc"/>
                             <constraint firstItem="qld-h2-aev" firstAttribute="top" secondItem="pBQ-px-KoQ" secondAttribute="bottom" constant="24" id="MzR-w7-zFS"/>
                             <constraint firstItem="dBp-Dw-CCJ" firstAttribute="leading" secondItem="a6B-bh-hT9" secondAttribute="leading" constant="20" id="Qc4-dE-98a"/>
                             <constraint firstItem="a6B-bh-hT9" firstAttribute="trailing" secondItem="dBp-Dw-CCJ" secondAttribute="trailing" constant="20" id="T2p-H6-lwD"/>
